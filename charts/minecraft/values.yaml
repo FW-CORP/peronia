@@ -228,9 +228,9 @@ minecraftServer:
   # When true, players will be prompted for a response and will be disconnected if they decline the required pack
   resourcePackEnforce: false
   # Check accounts against Minecraft account service.
-  onlineMode: default
+  onlineMode: false
   # Require public key to be signed by Mojang to join
-  enforceSecureProfile: default
+  enforceSecureProfile: false
   # If you adjust this, you may need to adjust resources.requests above to match.
   memory: 1024M
   # General JVM options to be passed to the Minecraft server invocation
