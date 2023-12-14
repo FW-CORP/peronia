@@ -243,7 +243,7 @@ minecraftServer:
   overrideServerProperties: false
   # DEPRECATED: use top-level rconServiceAnnotations instead
   serviceAnnotations: {}
-  serviceType: ClusterIP
+  serviceType: LoadBalancer
   ## Set the port used if the serviceType is NodePort
   nodePort:
   # Set the external port of the service, usefull when using the LoadBalancer service type
@@ -393,11 +393,11 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "-"
+  storageClass: "longhorn"
   dataDir:
     # Set this to false if you don't care to persist state between restarts.
     enabled: false
-    Size: 1Gi
+    Size: 10Gi
     # existingClaim: nil
     ## specify a subpath in the volume where the data is. Useful when sharing volumes with other apps.
     # subPath: /path/to/dataDir
@@ -517,9 +517,9 @@ mcbackup:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "longhorn"
     backupDir:
       # Set this to false if you don't care to persist state between restarts.
       enabled: false
       # existingClaim: nil
-      Size: 1Gi
+      Size: 10Gi
