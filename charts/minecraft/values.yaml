@@ -133,9 +133,9 @@ extraDeploy: []
 
 minecraftServer:
   # This must be overridden, since we can't accept this for the user.
-  eula: "FALSE"
+  eula: "TRUE"
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
-  version: "LATEST"
+  version: "1.20"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
   type: "VANILLA"
   # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
@@ -159,7 +159,7 @@ minecraftServer:
   # Set to true if running Feed The Beast and get an error like "unable to launch forgemodloader"
   ftbLegacyJavaFixer: default
   # One of: peaceful, easy, normal, and hard
-  difficulty: easy
+  difficulty: hard
   # A comma-separated list of player names to whitelist.
   whitelist:
   # A comma-separated list of player names who should be admins.
@@ -193,7 +193,7 @@ minecraftServer:
   # Determines if villagers will be spawned.
   spawnNPCs: default
   # Sets the area that non-ops can not edit (0 to disable)
-  spawnProtection: 16
+  spawnProtection: 0
   # Max view distance (in chunks).
   viewDistance: 10
   # Define this if you want a specific map generation seed.
@@ -201,7 +201,7 @@ minecraftServer:
   # One of: creative, survival, adventure, spectator
   gameMode: survival
   # Message of the Day
-  motd: "Welcome to Minecraft on Kubernetes!"
+  motd: "PERONIA"
   # If true, enable player-vs-player damage.
   pvp: default
   # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
@@ -252,7 +252,7 @@ minecraftServer:
   loadBalancerIP:
   # loadBalancerSourceRanges: []
   ## Set the externalTrafficPolicy in the Service to either Cluster or Local
-  # externalTrafficPolicy: Cluster
+  externalTrafficPolicy: Cluster
   externalIPs:
 
   # List with URLs and paths to jar files, additionally may be a directory with jars
@@ -310,22 +310,19 @@ minecraftServer:
   rcon:
     # If you enable this, make SURE to change your password below.
     enabled: false
-    # By default, the container will generate a random password at startup
-    # to ensure internal RCON tooling, including a backup container,
-    # can be used, but the password is secure.
     withGeneratedPassword: false
     port: 25575
-    password: "CHANGEME!"
+    password: ""
     existingSecret:
     secretKey: rcon-password
-    serviceType: ClusterIP
+    serviceType: LoadBalancer
     ## Set the external port if the rcon serviceType is NodePort
     nodePort:
     clusterIP:
     loadBalancerIP:
     # loadBalancerSourceRanges: []
     ## Set the externalTrafficPolicy in the Service to either Cluster or Local
-    # externalTrafficPolicy: Cluster
+    externalTrafficPolicy: Cluster
 
   extraPorts:
     []
@@ -393,11 +390,11 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "-"
+  storageClass: "longhorn"
   dataDir:
     # Set this to false if you don't care to persist state between restarts.
     enabled: false
-    Size: 1Gi
+    Size: 10Gi
     # existingClaim: nil
     ## specify a subpath in the volume where the data is. Useful when sharing volumes with other apps.
     # subPath: /path/to/dataDir
@@ -517,9 +514,9 @@ mcbackup:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "longhorn"
     backupDir:
       # Set this to false if you don't care to persist state between restarts.
-      enabled: false
+      enabled: true
       # existingClaim: nil
-      Size: 1Gi
+      Size: 10Gi
