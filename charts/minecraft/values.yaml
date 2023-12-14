@@ -396,7 +396,7 @@ persistence:
   storageClass: "longhorn"
   dataDir:
     # Set this to false if you don't care to persist state between restarts.
-    enabled: false
+    enabled: true
     Size: 10Gi
     # existingClaim: nil
     ## specify a subpath in the volume where the data is. Useful when sharing volumes with other apps.
@@ -520,6 +520,6 @@ mcbackup:
     storageClass: "longhorn"
     backupDir:
       # Set this to false if you don't care to persist state between restarts.
-      enabled: false
+      enabled: true
       # existingClaim: nil
       Size: 10Gi
