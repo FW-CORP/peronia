@@ -1,3 +1,4 @@
+#kubectl exec -i peronia-minecraft-6f6b5d4f59-w762f -n minecraft rcon-cli
 # ref: https://hub.docker.com/r/itzg/minecraft-server/
 image:
   repository: itzg/minecraft-server
@@ -193,7 +194,7 @@ minecraftServer:
   # Determines if villagers will be spawned.
   spawnNPCs: default
   # Sets the area that non-ops can not edit (0 to disable)
-  spawnProtection: 16
+  spawnProtection: 0
   # Max view distance (in chunks).
   viewDistance: 10
   # Define this if you want a specific map generation seed.
@@ -416,7 +417,7 @@ rconServiceLabels: {}
 
 # PLEASE NOTE! rcon must be enabled above!  It does NOT require a nodePort or loadBalancerIP
 mcbackup:
-  enabled: false
+  enabled: true
 
   image:
     repository: itzg/mc-backup
