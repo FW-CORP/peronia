@@ -263,8 +263,9 @@ minecraftServer:
   pluginUrls: [https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar]
 #https://dev.bukkit.org/projects/grief-prevention/files/latest
   # A list of Spigot resources/plugins IDs to download.
-  spigetResources: [1229, 113954, 18078, 18848, 17129, 10905, 81069, 109245, 28140, 76746, 111684]
+  spigetResources: [, 113954, 18078, 18848, 17129, 10905, 81069, 109245, 28140, 76746, 111684]
 #luckpermsGUI 53460
+#1229 alredy downloaded
   # Additional service specs to be defined
   extraServiceSpec: {}
 
