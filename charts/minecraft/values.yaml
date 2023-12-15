@@ -76,7 +76,7 @@ readinessProbe:
 startupProbe:
   command:
     - mc-health
-  enabled: false
+  enabled: false  
   failureThreshold: 30
   periodSeconds: 10
 
@@ -309,23 +309,23 @@ minecraftServer:
 
   rcon:
     # If you enable this, make SURE to change your password below.
-    enabled: false
+    enabled: true
     # By default, the container will generate a random password at startup
     # to ensure internal RCON tooling, including a backup container,
     # can be used, but the password is secure.
     withGeneratedPassword: false
     port: 25575
-    password: "CHANGEME!"
+    password: ""
     existingSecret:
     secretKey: rcon-password
-    serviceType: ClusterIP
+    serviceType: LoadBalancer
     ## Set the external port if the rcon serviceType is NodePort
     nodePort:
     clusterIP:
     loadBalancerIP:
     # loadBalancerSourceRanges: []
     ## Set the externalTrafficPolicy in the Service to either Cluster or Local
-    # externalTrafficPolicy: Cluster
+    externalTrafficPolicy: Cluster
 
   extraPorts:
     []
