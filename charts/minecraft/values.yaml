@@ -263,7 +263,7 @@ minecraftServer:
   pluginUrls: []
 
   # A list of Spigot resources/plugins IDs to download.
-  spigetResources: [1222]
+  spigetResources: [1229]
 
   # Additional service specs to be defined
   extraServiceSpec: {}
