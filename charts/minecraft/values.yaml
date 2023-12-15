@@ -54,7 +54,7 @@ securityContext:
   capabilities:
     drop:
       - ALL
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   allowPrivilegeEscalation: false
 
 # Most of these map to environment variables. See Minecraft for details:
@@ -263,7 +263,7 @@ minecraftServer:
   pluginUrls: []
 
   # A list of Spigot resources/plugins IDs to download.
-  spigetResources: [1229]
+  spigetResources: [1229, 113954, 18078, 18848, 17129, 10905, 81069]
 
   # Additional service specs to be defined
   extraServiceSpec: {}
