@@ -77,7 +77,7 @@ readinessProbe:
 startupProbe:
   command:
     - mc-health
-  enabled: false
+  enabled: false  
   failureThreshold: 30
   periodSeconds: 10
 
@@ -229,9 +229,9 @@ minecraftServer:
   # When true, players will be prompted for a response and will be disconnected if they decline the required pack
   resourcePackEnforce: false
   # Check accounts against Minecraft account service.
-  onlineMode: default
+  onlineMode: false
   # Require public key to be signed by Mojang to join
-  enforceSecureProfile: default
+  enforceSecureProfile: false
   # If you adjust this, you may need to adjust resources.requests above to match.
   memory: 1024M
   # General JVM options to be passed to the Minecraft server invocation
@@ -310,23 +310,23 @@ minecraftServer:
 
   rcon:
     # If you enable this, make SURE to change your password below.
-    enabled: false
+    enabled: true
     # By default, the container will generate a random password at startup
     # to ensure internal RCON tooling, including a backup container,
     # can be used, but the password is secure.
     withGeneratedPassword: false
     port: 25575
-    password: "CHANGEME!"
+    password: "talasemico0852"
     existingSecret:
     secretKey: rcon-password
-    serviceType: ClusterIP
+    serviceType: LoadBalancer
     ## Set the external port if the rcon serviceType is NodePort
     nodePort:
     clusterIP:
     loadBalancerIP:
     # loadBalancerSourceRanges: []
     ## Set the externalTrafficPolicy in the Service to either Cluster or Local
-    # externalTrafficPolicy: Cluster
+    externalTrafficPolicy: Cluster
 
   extraPorts:
     []
@@ -397,7 +397,7 @@ persistence:
   storageClass: "longhorn"
   dataDir:
     # Set this to false if you don't care to persist state between restarts.
-    enabled: false
+    enabled: true
     Size: 10Gi
     # existingClaim: nil
     ## specify a subpath in the volume where the data is. Useful when sharing volumes with other apps.
@@ -521,6 +521,6 @@ mcbackup:
     storageClass: "longhorn"
     backupDir:
       # Set this to false if you don't care to persist state between restarts.
-      enabled: false
+      enabled: true
       # existingClaim: nil
       Size: 10Gi
