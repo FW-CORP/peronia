@@ -1,4 +1,5 @@
-#kubectl exec -i peronia-minecraft-6f6b5d4f59-w762f -n minecraft rcon-cli
+#kubectl exec -i <pod> -n minecraft rcon-cli
+#kubectl exec --namespace ${NAMESPACE} ${POD_ID} rcon-cli save-all
 # ref: https://hub.docker.com/r/itzg/minecraft-server/
 image:
   repository: itzg/minecraft-server
@@ -138,7 +139,7 @@ minecraftServer:
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
   version: "1.20"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
-  type: "VANILLA"
+  type: "SPIGOT"
   # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
   forgeVersion:
   # If type is set to SPONGEVANILLA, this sets the version
