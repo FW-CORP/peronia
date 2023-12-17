@@ -139,7 +139,7 @@ minecraftServer:
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
   version: "1.20"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
-  type: "SPIGOT"
+  type: "FORGE"
   # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
   forgeVersion:
   # If type is set to SPONGEVANILLA, this sets the version
@@ -213,7 +213,7 @@ minecraftServer:
   generatorSettings:
   worldSaveName: world
   # If set, this URL will be downloaded at startup and used as a starting point
-  downloadWorldUrl:
+  downloadWorldUrl: https://www.curseforge.com/minecraft/modpacks/better-mc-forge-bmc4/download/4951582
   # force re-download of server file
   forceReDownload: false
   # If set, the modpack at this URL will be downloaded at startup
