@@ -145,7 +145,7 @@ minecraftServer:
   # If type is set to SPONGEVANILLA, this sets the version
   spongeVersion:
   # If type is set to FORGE, this sets the URL to download the Forge installer
-  forgeInstallerUrl:
+  forgeInstallerUrl: https://next.fwhq.com.ar/s/PcAGXGaAmr8ryXw/download/forge-1.20.1-47.2.0-installer.jar
   # If type is set to BUKKIT, this sets the URL to download the Bukkit package
   bukkitDownloadUrl:
   # If type is set to SPIGOT, this sets the URL to download the Spigot package
