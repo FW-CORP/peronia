@@ -217,7 +217,7 @@ minecraftServer:
   # force re-download of server file
   forceReDownload: false
   # If set, the modpack at this URL will be downloaded at startup
-  downloadModpackUrl: https://next.fwhq.com.ar/s/7nmZmBN9ygCnAqf/download/modpack.zip
+  downloadModpackUrl: https://next.fwhq.com.ar/s/pNDxgJX7nA9xJNm/download/modpack.zip
   # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
   removeOldMods: false
   # A list of VanillaTweaks Share Codes to download. (https://vanillatweaks.net/share#wUq1iz => "wUq1iz")
@@ -416,7 +416,7 @@ rconServiceLabels: {}
 
 # PLEASE NOTE! rcon must be enabled above!  It does NOT require a nodePort or loadBalancerIP
 mcbackup:
-  enabled: true
+  enabled: false
 
   image:
     repository: itzg/mc-backup
