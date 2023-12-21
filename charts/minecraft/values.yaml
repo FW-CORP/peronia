@@ -161,7 +161,7 @@ minecraftServer:
   # Set to true if running Feed The Beast and get an error like "unable to launch forgemodloader"
   ftbLegacyJavaFixer: default
   # One of: peaceful, easy, normal, and hard
-  difficulty: hard
+  difficulty: normal
   # A comma-separated list of player names to whitelist.
   whitelist:
   # A comma-separated list of player names who should be admins.
@@ -217,7 +217,7 @@ minecraftServer:
   # force re-download of server file
   forceReDownload: false
   # If set, the modpack at this URL will be downloaded at startup
-  downloadModpackUrl: https://next.fwhq.com.ar/s/jRkTd9i9AqoLeqk/download/modpack.zip
+  downloadModpackUrl: https://next.fwhq.com.ar/s/QrBN4tosnJsre94/download
   # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
   removeOldMods: false
   # A list of VanillaTweaks Share Codes to download. (https://vanillatweaks.net/share#wUq1iz => "wUq1iz")
