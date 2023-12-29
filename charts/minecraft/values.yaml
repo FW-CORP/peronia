@@ -217,7 +217,7 @@ minecraftServer:
   # force re-download of server file
   forceReDownload: false
   # If set, the modpack at this URL will be downloaded at startup
-  downloadModpackUrl: https://next.fwhq.com.ar/s/Z7MbZEbm6Bnj5tp/download/modpack.zip
+  downloadModpackUrl: https://next.fwhq.com.ar/s/cAjLxbbBMnPqmwJ/download/modpack.zip
   # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
   removeOldMods: false
   # A list of VanillaTweaks Share Codes to download. (https://vanillatweaks.net/share#wUq1iz => "wUq1iz")
@@ -249,7 +249,7 @@ minecraftServer:
   ## Set the port used if the serviceType is NodePort
   nodePort:
   # Set the external port of the service, usefull when using the LoadBalancer service type
-  servicePort: 25565
+  servicePort: 25566
   clusterIP:
   loadBalancerIP:
   # loadBalancerSourceRanges: []
@@ -314,7 +314,7 @@ minecraftServer:
     # to ensure internal RCON tooling, including a backup container,
     # can be used, but the password is secure.
     withGeneratedPassword: false
-    port: 25575
+    port: 25576
     password: "talasemico0852"
     existingSecret:
     secretKey: rcon-password
